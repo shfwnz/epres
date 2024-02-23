@@ -63,11 +63,11 @@
     }
     if ($("#transaction-history").length) {
       var areaData = {
-        labels: ["Paypal", "Stripe","Cash"],
+        labels: ["Paypal", "Stripe","Cash","coba"],
         datasets: [{
-            data: [55, 25, 20],
+            data: [55, 25, 10,10],
             backgroundColor: [
-              "#111111","#00d25b","#ffab00"
+              "#111111","#00d25b","#ffab00","#ffff"
             ]
           }
         ]
@@ -101,8 +101,12 @@
           ctx.textAlign = 'left';
           ctx.textBaseline = "middle";
           ctx.fillStyle = "#ffffff";
-      
-          var text = "$1200", 
+          
+          var texts = "Jumlah Siswa", 
+          textsX = Math.round((width - ctx.measureText(text).width) / 2.0),
+          textsY = height / 1.75;
+
+          var text = "100", 
               textX = Math.round((width - ctx.measureText(text).width) / 2),
               textY = height / 2.4;
       
@@ -114,10 +118,6 @@
           ctx.textAlign = 'left';
           ctx.textBaseline = "middle";
           ctx.fillStyle = "#6c7293";
-
-          var texts = "Total", 
-              textsX = Math.round((width - ctx.measureText(text).width) / 1.93),
-              textsY = height / 1.7;
       
           ctx.fillText(texts, textsX, textsY);
           ctx.save();
@@ -133,11 +133,11 @@
     }
     if ($("#transaction-history-arabic").length) {
       var areaData = {
-        labels: ["Paypal", "Stripe","Cash"],
+        labels: ["Paypal", "Stripe","Cash","coba"],
         datasets: [{
-            data: [55, 25, 20],
+            data: [55, 25, 10,10],
             backgroundColor: [
-              "#111111","#00d25b","#ffab00"
+              "#111111","#00d25b","#ffab00","#ffff"
             ]
           }
         ]
@@ -172,7 +172,7 @@
           ctx.textBaseline = "middle";
           ctx.fillStyle = "#ffffff";
       
-          var text = "$1200", 
+          var text = "100", 
               textX = Math.round((width - ctx.measureText(text).width) / 2),
               textY = height / 2.4;
       
