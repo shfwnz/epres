@@ -1,108 +1,73 @@
-# [Paper Dashboard](http://demos.creative-tim.com/paper-dashboard/dashboard.html)
-![alt text](https://s3.amazonaws.com/creativetim_bucket/products/43/original/opt_pd_thumbnail.jpg "Paper Dashboard Free")
+<table>
+  <tr>
+    <td>
+      <a href="https://www.bootstrapdash.com/demo/corona-free/jquery/template/index.html" target="_blank"><img src="preview.jpg"></a>
+       <h3>Corona-free</h3>
+    </td>
+  </tr>
+</table>
 
-If you are a developer or a website owner that needs to work within a dashboard and want to have a pretty sight while doing so, Paper Dashboard is for you. Paper Dashboard is a Bootstrap Admin Panel which combines soft colours with beautiful typography and spacious cards and graphics. It is a powerful tool, but it is light and easy to use. It has enough features to allow you to get the job done, but it is not crowded to the point where you can't find the files for a specific plugin.
+<h1>CoronaAdmin-Free-Admin-Template</h1>
+Corona Admin is a free responsive admin template built with Bootstrap 4. The template has colorful, attractive yet simple and elegant design. The template is well crafted, with all the components neatly and carefully designed and arranged within the template.
 
-We like consistency and design that blends into its purpose. Paper Dashboard is a perfect example of our most thoughtful work. It combines over a dozen components and plugins, while looking like everything fits together. For an easy start or inspiration for you project, we have also create a set of example pages, like the user settings or usage graphics.
+Corona Admin is packed with all the features that fit your needs but not cramped with components you would not even use. It is an excellent fit to build admin panels, e-commerce systems, project management systems, CMS or CRM.
 
-Paper Dashboard is built using the same design language as [Paper Kit](http://www.creative-tim.com/product/paper-kit). You can easily use them together, or pick between them depending on the project you have.
+Although the template has a design like none other, it is easily customizable to suit your requirements. Corona Admin comes with a clean and well-commented code that makes it easy to work with the template. Thus making it an ideal pick for jump starting your project.
 
-Let us know what you think and what we can improve below. And good luck with development!
+<h1>Credits:</h1>
 
-## Links:
+- Bootstrap 4
+- Material Design Icons
+- jQuery
+- Gulp
+- Chart.js
 
-+ [Live Preview](http://demos.creative-tim.com/paper-dashboard/dashboard.html)
-+ [Paper Dashboard PRO](http://www.creative-tim.com/product/paper-dashboard-pro?ref=pd-free-upgrade-github) (from $39)
+<h1>Browser Support:</h1>
 
-## Quick start
+Corona Admin is designed to work flawlessly with all the latest and modern web browsers.
 
-Quick start options:
+- Chrome (latest)
+- FireFox (latest)
+- Safari (latest)
+- Opera (latest)
+- IE10+
 
-- [Download from Github](https://github.com/timcreative/paper-dashboard/releases/tag/v1.1).
-- [Download from Creative Tim](http://www.creative-tim.com/product/paper-dashboard).
-- Clone the repo: `git clone https://github.com/timcreative/paper-dashboard.git`.
+<h1>License Information:</h1>
 
+Corona Admin is released under MIT license. Corona Admin is a free Bootstrap 4 admin template developed from BootstrapDash. Feel free to download it, use it, share it, get creative with it.
 
-### What's included
+<h1>How to use Corona Admin?</h1>
 
-Within the download you'll find the following directories and files:
+1 - Click the Clone or Download button in GitHub and download as a ZIP file or you can enter the command git clone https://github.com/BootstrapDash/corona-free-dark-bootstrap-admin-template.git in you terminal to get a copy of this template.
 
-```
-paper-dashboard/
-├── assets/
-|   ├── css/
-|   |   ├── animate.min.css
-|   |   ├── bootstrap.min.css
-|   |   ├── demo.css
-│   |   ├── paper-dashboard.css
-│   |   └── themify-icons.css
-|   ├── js/
-|   |   ├── bootstrap-checkbox-radio.js
-|   |   ├── bootstrap-notify.js
-|   |   ├── bootstrap.min.js
-│   |   ├── chartist.min.js
-│   |   ├── demo.js
-│   |   ├── jquery-1.10.2.js
-│   |   └── paper-dashboard.js
-|   ├── fonts/
-|   |    ├── themify.eot
-|   |    ├── themify.svg
-|   |    ├── themify.ttf
-|   |    └── themify.woff
-|   ├── sass/
-|   └── img/
-|
-├── dashboard.html
-├── documentation/
-|   ├── css
-|   └── documentation.html
-├── icons.html
-├── maps.html
-├── notifications.html
-├── table.html
-├── template.html
-├── typography.html
-├── upgrade.html
-└── user.html
+2 - After the files have been downloaded you will get a folder with all the required files
 
-```
+3 - You can install all the dependencies in the template by running the command npm install. All the required files are in the node modules.
 
-### Version logs
+4 - Find the file named index.html, check what all components you need. Open the file in a text editor and you can start editing.
 
-V1.0, 29.03.2016 Original Release
+5 - Now that your project has now kick-started, all you need to do now is to code, code, and code to your heart's content.
 
-V1.1.0, 30 Sept 2016 - New Page
-- added Upgrade to PRO page for those who want to upsell inside the dashboard
+<h1>How to Contribute?:</h1>
 
-V1.1.1, 8 Feb 2017 
-- switched to MIT license
+We love your contributions and we welcome them wholeheartedly. We believe the more the merrier.
+To contribute make sure you have a Node.js and npm installed. Now run the command gulp --version. If the command returns with the Gulp version number, it means you have Gulp installed. If not you need to run the command npm install --global gulp-cli to install Gulp.
 
-V1.1.2, 8 Mar 2017
-- added documentation
+<h2>Next</h2>
 
-### License
+After Gulp has been installed, follow the steps below to contribute.
+<br>
+1 - Fork and clone the repo of Corona Admin.
+<br>
+2 - Run the command npm install to install all the dependencies.
+<br>
+3 - Enter the command gulp serve. This will open Corona Admin in your default browser.
+<br>
+4 - Make your valuable contribution
+<br>
+5 - Submit a pull request.
 
-- Copyright 2017 Creative Tim (http://www.creative-tim.com)
-- Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard/blob/master/LICENSE.md)
-
-## Useful Links
-
-More products from Creative Tim: <http://www.creative-tim.com/products>
-
-Tutorials: <https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w>
-
-Freebies: <http://www.creative-tim.com/products>
-
-Affiliate Program (earn money): <http://www.creative-tim.com/affiliates/new>
-
-Social Media:
-
-Twitter: <https://twitter.com/CreativeTim>
-
-Facebook: <https://www.facebook.com/CreativeTim>
-
-Dribbble: <https://dribbble.com/creativetim>
-
-Google+: <https://plus.google.com/+CreativetimPage>
-
-Instagram: <https://instagram.com/creativetimofficial>
+  <hr>
+	Do you need a template with more features and functionalities? Get more with our collection of the premium template with more plugins, eye catching animations, UI components, and sample pages all fitting together with a high-quality design.
+Visit
+  <a href="https://www.bootstrapdash.com" target="_blank">https://www.bootstrapdash.com</a> for more admin templates.
