@@ -2,17 +2,17 @@
   <tr>
     <td>
       <a href="https://www.bootstrapdash.com/demo/corona-free/jquery/template/index.html" target="_blank"><img src="preview.jpg"></a>
-       <h3>Corona-free</h3>
+       <h3>ePRESS</h3>
     </td>
   </tr>
 </table>
 
 <h1>CoronaAdmin-Free-Admin-Template</h1>
-Corona Admin is a free responsive admin template built with Bootstrap 4. The template has colorful, attractive yet simple and elegant design. The template is well crafted, with all the components neatly and carefully designed and arranged within the template.
+ePRESS is a free responsive admin template built with Bootstrap 4. The template has colorful, attractive yet simple and elegant design. The template is well crafted, with all the components neatly and carefully designed and arranged within the template.
 
-Corona Admin is packed with all the features that fit your needs but not cramped with components you would not even use. It is an excellent fit to build admin panels, e-commerce systems, project management systems, CMS or CRM.
+ePRESS is packed with all the features that fit your needs but not cramped with components you would not even use. It is an excellent fit to build admin panels, e-commerce systems, project management systems, CMS or CRM.
 
-Although the template has a design like none other, it is easily customizable to suit your requirements. Corona Admin comes with a clean and well-commented code that makes it easy to work with the template. Thus making it an ideal pick for jump starting your project.
+Although the template has a design like none other, it is easily customizable to suit your requirements. ePRESS comes with a clean and well-commented code that makes it easy to work with the template. Thus making it an ideal pick for jump starting your project.
 
 <h1>Credits:</h1>
 
@@ -24,7 +24,7 @@ Although the template has a design like none other, it is easily customizable to
 
 <h1>Browser Support:</h1>
 
-Corona Admin is designed to work flawlessly with all the latest and modern web browsers.
+ePRESS is designed to work flawlessly with all the latest and modern web browsers.
 
 - Chrome (latest)
 - FireFox (latest)
@@ -34,9 +34,9 @@ Corona Admin is designed to work flawlessly with all the latest and modern web b
 
 <h1>License Information:</h1>
 
-Corona Admin is released under MIT license. Corona Admin is a free Bootstrap 4 admin template developed from BootstrapDash. Feel free to download it, use it, share it, get creative with it.
+ePRESS is released under MIT license. ePRESS is a free Bootstrap 4 admin template developed from BootstrapDash. Feel free to download it, use it, share it, get creative with it.
 
-<h1>How to use Corona Admin?</h1>
+<h1>How to use ePRESS?</h1>
 
 1 - Click the Clone or Download button in GitHub and download as a ZIP file or you can enter the command git clone https://github.com/BootstrapDash/corona-free-dark-bootstrap-admin-template.git in you terminal to get a copy of this template.
 
@@ -57,11 +57,11 @@ To contribute make sure you have a Node.js and npm installed. Now run the comman
 
 After Gulp has been installed, follow the steps below to contribute.
 <br>
-1 - Fork and clone the repo of Corona Admin.
+1 - Fork and clone the repo of ePRESS.
 <br>
 2 - Run the command npm install to install all the dependencies.
 <br>
-3 - Enter the command gulp serve. This will open Corona Admin in your default browser.
+3 - Enter the command gulp serve. This will open ePRESS in your default browser.
 <br>
 4 - Make your valuable contribution
 <br>
