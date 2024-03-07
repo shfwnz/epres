@@ -7,7 +7,7 @@
   </tr>
 </table>
 
-<h1>CoronaAdmin-Free-Admin-Template</h1>
+<h1>ePRESS</h1>
 ePRESS is a free responsive admin template built with Bootstrap 4. The template has colorful, attractive yet simple and elegant design. The template is well crafted, with all the components neatly and carefully designed and arranged within the template.
 
 ePRESS is packed with all the features that fit your needs but not cramped with components you would not even use. It is an excellent fit to build admin panels, e-commerce systems, project management systems, CMS or CRM.
