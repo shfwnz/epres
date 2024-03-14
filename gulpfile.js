@@ -1,13 +1,34 @@
-'use strict'
 var gulp = require('gulp');
-var requireDir = require('require-dir');
-requireDir('gulp-tasks');
+var path = require('path');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
+var open = require('gulp-open');
 
-
-gulp.paths = {
-    dist: 'dist',
+var Paths = {
+  HERE: './',
+  DIST: 'dist/',
+  CSS: './assets/css/',
+  SCSS_TOOLKIT_SOURCES: './assets/scss/material-dashboard.scss',
+  SCSS: './assets/scss/**/**'
 };
 
-var paths = gulp.paths;
+gulp.task('compile-scss', function() {
+  return gulp.src(Paths.SCSS_TOOLKIT_SOURCES)
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(sourcemaps.write(Paths.HERE))
+    .pipe(gulp.dest(Paths.CSS));
+});
 
-gulp.task('default', gulp.series('serve'));
+gulp.task('watch', function() {
+  gulp.watch(Paths.SCSS, gulp.series('compile-scss'));
+});
+
+gulp.task('open', function() {
+  gulp.src('pages/dashboard.html')
+    .pipe(open());
+});
+
+gulp.task('open-app', gulp.parallel('open', 'watch'));
