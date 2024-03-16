@@ -62,6 +62,14 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link text-white " href="../pages/absensi-siswa.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">person</i>
+            </div>
+            <span class="nav-link-text ms-1">Absensi Siswa</span>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link text-white active bg-gradient-info" href="../pages/data-siswa.html">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">person</i>
@@ -83,6 +91,14 @@
               <i class="material-icons opacity-10">print</i>
             </div>
             <span class="nav-link-text ms-1">Generate Laporan</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="../pages/dashboard-siswa.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">photo_camera</i>
+            </div>
+            <span class="nav-link-text ms-1">Scan</span>
           </a>
         </li>
         <li class="nav-item">
@@ -253,8 +269,11 @@
         <div class="col-12">
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-              <div class="bg-gradient-info shadow-primary border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Daftar Siswa</h6>
+              <div class="d-flex align-items-center pt-2 p-2 pb-2 bg-gradient-info shadow-primary border-radius-lg">
+                <div class="icon icon-shape icon-lg text-center border-radius-lg">
+                  <i class="material-icons opacity-10">person</i>
+                </div>
+                <span class="text-white text-uppercase text-bold">Data siswa</span>
               </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -267,7 +286,7 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder">Nama Siswa</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder">Kelas/Jurusan</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder">Jenis Kelamin</th>
-                      <th class="text-secondary"></th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder">Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -284,7 +303,8 @@
                       </td>
                       <td class="text-left ">
                         <div class="d-flex align-items-center py-1 px-3">
-                          <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                          <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg"
+                            alt="user1">
                           <div>
                             <h6 class="mb-0 text-sm">Dedih</h6>
                             <p class="text-xs text-secondary mb-0">nama@stembayo.com</p>
@@ -296,18 +316,21 @@
                           <p class="text font-weight mb-0">11 SIJA C</p>
                         </div>
                       </td>
-                      <td class="text-center">
+                      <td class="text-left">
                         <div class="d-flex px-3 py-1">
                           <p class="text font-weight mb-0">Non binary</p>
                         </div>
                       </td>
-                      <td class="text-center">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
+                      <td class="text-left">
+                        <div class="d-flex px-3 py-1">
+                          <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                            data-original-title="Edit user">
+                            Edit
+                          </a>
+                        </div>
                       </td>
                     </tr>
-                    </tbody>
+                  </tbody>
                 </table>
                 <div id="dataSiswa">
                   <p class="text-center mt-3">Daftar siswa muncul disini</p>
