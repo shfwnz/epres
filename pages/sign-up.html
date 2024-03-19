@@ -24,7 +24,8 @@
     Material Dashboard 2 by Creative Tim
   </title>
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -34,19 +35,24 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body class="">
   <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
       <div class="col-12">
+        
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
+        <!-- <nav
+          class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
           <div class="container-fluid ps-2 pe-0">
             <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="../pages/dashboard.html">
               Material Dashboard 2
             </a>
-            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
+              aria-label="Toggle navigation">
               <span class="navbar-toggler-icon mt-2">
                 <span class="navbar-toggler-bar bar1"></span>
                 <span class="navbar-toggler-bar bar2"></span>
@@ -56,7 +62,8 @@
             <div class="collapse navbar-collapse" id="navigation">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
+                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page"
+                    href="../pages/dashboard.html">
                     <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
                     Dashboard
                   </a>
@@ -82,12 +89,13 @@
               </ul>
               <ul class="navbar-nav d-lg-block d-none">
                 <li class="nav-item">
-                  <a href="https://www.creative-tim.com/product/material-dashboard" class="btn btn-sm mb-0 me-1 bg-gradient-dark">Free download</a>
+                  <a href="https://www.creative-tim.com/product/material-dashboard"
+                    class="btn btn-sm mb-0 me-1 bg-gradient-dark">Free download</a>
                 </li>
               </ul>
             </div>
           </div>
-        </nav>
+        </nav> -->
         <!-- End Navbar -->
       </div>
     </div>
@@ -97,40 +105,113 @@
       <div class="page-header min-vh-100">
         <div class="container">
           <div class="row">
-            <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background-image: url('../assets/img/illustrations/illustration-signup.jpg'); background-size: cover;">
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
+            <div class="col-xl-6 col-lg-6 col-md-6 flex-column ms-auto me-auto ms-lg-auto ">
               <div class="card card-plain">
-                <div class="card-header">
-                  <h4 class="font-weight-bolder">Sign Up</h4>
-                  <p class="mb-0">Enter your email and password to register</p>
-                </div>
-                <div class="card-body">
-                  <form role="form">
-                    <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Name</label>
-                      <input type="text" class="form-control">
+                <div class="container">
+                  <div class="row d-flex justify-content-center align-items-center">
+                    <div class="card-header">
+                      <form id="regForm">
+                        <div class="card-header">
+                          <h2 class="font-weight-bolder">Sign Up</h2>
+                          <p class="mb-0">Enter your email and password to register</p>
+                        </div>
+                        <div class="all-steps" id="all-steps"> <span class="step"></span> <span class="step"></span>
+                          <span class="step"></span>
+                        </div>
+                        <div class="tab">
+                          <h5>Register User</h5>
+                          <label class="mb-0"> Username</label>
+                          <div class="input-group input-group-outline mb-3">
+                            <input type="text" placeholder="" class="form-control" oninput="this.className = ''">
+                          </div>
+                          <label class="mb-0"> Email</label>
+                          <div class="input-group input-group-outline mb-3">
+                            <input type="email" placeholder="" class="form-control" oninput="this.className = ''">
+                          </div>
+                          <label class="mb-0"> Password</label>
+                          <div class="input-group input-group-outline mb-3">
+                            <input type="password" placeholder="" class="form-control" oninput="this.className = ''">
+                          </div>
+                          <label class="mb-0"> Confirm Password</label>
+                          <div class="input-group input-group-outline mb-3">
+                            <input type="password" placeholder="" class="form-control" oninput="this.className = ''">
+                          </div>
+                        </div>
+                        <div class="tab">
+                          <h5>User Settings</h5>
+                          <label class="mb-0"> Full Name</label>
+                          <div class="input-group input-group-outline mb-3">
+                            <input type="text" placeholder="" class="form-control" oninput="this.className = ''">
+                          </div>
+                          <label class="mb-0"> Kelas/Jurusan</label>
+                          <div class="input-group input-group-outline mb-3">
+                            <input type="email" placeholder="" class="form-control" oninput="this.className = ''">
+                          </div>
+                          <label class="mb-0"> Jenis Kelamin</label>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                              Default radio
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                              Second default radio
+                            </label>
+                          </div>
+                          <label class="mb-0"> Confirm Password</label>
+                          <div class="input-group input-group-outline mb-3">
+                            <input type="password" placeholder="" class="form-control" oninput="this.className = ''">
+                          </div>
+
+                        </div>
+                        <div class="tab">
+                          <h5>Ekstrakulikuler yang diikuti</h5>
+                          <p><input placeholder="Credit Card #" oninput="this.className = ''" name="email"></p>
+                          <p>Exp Month
+                            <select id="month">
+                              <option value="1">January</option>
+                              <option value="2">February</option>
+                              <option value="3">March</option>
+                              <option value="4">April</option>
+                              <option value="5">May</option>
+                              <option value="6">June</option>
+                              <option value="7">July</option>
+                              <option value="8">August</option>
+                              <option value="9">September</option>
+                              <option value="10">October</option>
+                              <option value="11">November</option>
+                              <option value="12">December</option>
+                            </select>
+                          </p>
+                          <p>Exp Year
+                            <select id="year">
+                              <option value="2021">2021</option>
+                              <option value="2022">2022</option>
+                              <option value="2023">2023</option>
+                              <option value="2024">2024</option>
+                            </select>
+                          </p>
+
+                          <p><input placeholder="CVV" oninput="this.className = ''" name="phone"></p>
+                        </div>
+
+                        <div class="thanks-message text-center" id="text-message"> <img
+                            src="https://i.imgur.com/O18mJ1K.png" width="100" class="mb-4">
+                          <h3>Thanks for your Donation!</h3> <span>Your donation has been entered! We will contact you
+                            shortly!</span>
+                        </div>
+                        <div style="overflow:auto;" id="nextprevious" class="jusrify-items-center">
+                          <div style="float:center;"> <button type="button" id="prevBtn"
+                              class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0"
+                              onclick="nextPrev(-1)">Previous</button> <button type="button" id="nextBtn"
+                              class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0"
+                              onclick="nextPrev(1)">Next</button> </div>
+                        </div>
+                      </form>
                     </div>
-                    <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Email</label>
-                      <input type="email" class="form-control">
-                    </div>
-                    <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Password</label>
-                      <input type="password" class="form-control">
-                    </div>
-                    <div class="form-check form-check-info text-start ps-0">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                      <label class="form-check-label" for="flexCheckDefault">
-                        I agree the <a href="javascript:;" class="text-dark font-weight-bolder">Terms and Conditions</a>
-                      </label>
-                    </div>
-                    <div class="text-center">
-                      <button type="button" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Sign Up</button>
-                    </div>
-                  </form>
+                  </div>
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-2 text-sm mx-auto">
@@ -163,6 +244,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-dashboard.min.js?v=3.0.0"></script>
+  <script src="../assets/js/core/script.js"></script>
 </body>
 
 </html>

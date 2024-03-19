@@ -289,7 +289,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" role="tab" aria-selected="true">
+                  <a class="nav-link mb-0 px-0 py-1 " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false">
                     <i class="material-icons text-lg position-relative">settings</i>
                     <span class="ms-1">Settings</span>
                   </a>
@@ -325,7 +325,7 @@
                     <li class="list-group-item border-0 px-0">
                       <div class="form-check form-switch ps-0">
                         <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault3">
-                        <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault3">Terima  pertemanan</label>
+                        <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault3">Terima semua permintaan pertemanan</label>
                       </div>
                     </li>
                   </ul>
@@ -340,18 +340,54 @@
                       <h6 class="mb-0">Profile Information</h6>
                     </div>
                     <div class="col-md-4 text-end">
-                      <a href="../pages/profile-setting.html">
-                        <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
+                      <a href="../pages/profile.html">
+                        <i class="fas fa-check text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Save"></i>
                       </a>
                     </div>
                   </div>
                 </div>
                 <div class="card-body p-3">
+                  <p class="text-sm">
                   <ul class="list-group">
-                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong> &nbsp; Dedih</li>
-                    <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Kelas/Jurusan:</strong> &nbsp; 11 SIJA C</li>
-                    <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; test@gmail.com</li>
-                    <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Jenis Kelamin:</strong> &nbsp; Email</li>
+                    <li class="list-group-item border-0 ps-0 pt-0 text-sm">
+                      <strong class="text-dark">Full Name:</strong> &nbsp; 
+                      <div class="input-group input-group-outline mb-0 mt-2">
+                        <input type="text" value="Dedih." class="form-control">
+                      </div>
+                    </li>
+                    <li class="list-group-item border-0 ps-0 text-sm">
+                      <strong class="text-dark">Kelas/Jurusan:</strong> &nbsp; 
+                      <div class="input-group input-group-outline mb-0 mt-2">
+                        <input type="text" value="11 SIJA C" class="form-control">
+                      </div>
+                    </li>
+                    <li class="list-group-item border-0 ps-0 text-sm">
+                      <strong class="text-dark">Email:</strong> &nbsp; 
+                      <div class="input-group input-group-outline mb-0 mt-2">
+                        <input type="email" value="test@gmail.com" class="form-control">
+                      </div>  
+                    </li>
+                    <li class="list-group-item border-0 ps-0 text-sm">
+                      <strong class="text-dark">Jenis Kelamin:</strong> &nbsp; 
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Female
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Email
+                        </label>
+                      </div>
+                    </li>
                     <li class="list-group-item border-0 ps-0 pb-0">
                       <strong class="text-dark text-sm">Social:</strong> &nbsp;
                       <a class="btn btn-facebook btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
