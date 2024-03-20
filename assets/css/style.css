@@ -96,8 +96,8 @@ button:hover {
 
 .container input[type="radio"] {
   position: absolute;
-  opacity: 0;
   cursor: pointer;
+  border: 3px;
 }
 
 
@@ -107,10 +107,14 @@ button:hover {
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 2px;
+  width: 2px;
   background-color: #eee;
-  border-radius: 50%;
+  border-radius: 25%;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  -ms-border-radius: 25%;
+  -o-border-radius: 25%;
 }
 
 
