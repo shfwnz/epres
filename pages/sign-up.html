@@ -38,141 +38,93 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body class="">
-  <div class="container position-sticky z-index-sticky top-0">
-    <div class="row">
-      <div class="col-12">
-
-        <!-- Navbar -->
-        <!-- <nav
-          class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
-          <div class="container-fluid ps-2 pe-0">
-            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="../pages/dashboard.html">
-              Material Dashboard 2
-            </a>
-            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon mt-2">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navigation">
-              <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page"
-                    href="../pages/dashboard.html">
-                    <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
-                    Dashboard
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link me-2" href="../pages/profile.html">
-                    <i class="fa fa-user opacity-6 text-dark me-1"></i>
-                    Profile
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link me-2" href="../pages/sign-up.html">
-                    <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
-                    Sign Up
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link me-2" href="../pages/sign-in.html">
-                    <i class="fas fa-key opacity-6 text-dark me-1"></i>
-                    Sign In
-                  </a>
-                </li>
-              </ul>
-              <ul class="navbar-nav d-lg-block d-none">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/product/material-dashboard"
-                    class="btn btn-sm mb-0 me-1 bg-gradient-dark">Free download</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav> -->
-        <!-- End Navbar -->
-      </div>
-    </div>
-  </div>
-  <main class="main-content  mt-0">
-    <section>
-      <div class="page-header min-vh-100">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 flex-column ms-auto me-auto ms-lg-auto ">
-              <div class="card card-plain">
-                <div class="container">
-                  <div class="row d-flex justify-content-center align-items-center">
-                    <div class="card-header">
-                      <form id="regForm">
-                        <div class="card-header">
-                          <h2 class="font-weight-bolder">Sign Up</h2>
-                          <p class="mb-0">Register your account</p>
+<body class="bg-gray-200">
+  <main class="main-content mt-0 p-0">
+    <div class="page-header min-vh-100" style="background-image: url('../assets/img/bg-login.jpg');">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-5 mt-3 col-md-8 col-12 mx-auto">
+            <div class="card card-plain">
+              <div class="z-index-3 fadeIn3 fadeInBottom">
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="row">
+                    <form id="regForm">
+                      <div class="card-header p-0 position-relative mt-n5 mx-3 z-index-2">
+                        <div class="bg-gradient-info shadow-primary border-radius-lg py-3 pe-0 ">
+                          <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Sign in</h4>
                         </div>
-                        <div class="card-body">
-                          <div class="all-steps" id="all-steps"> <span class="step"></span> <span class="step"></span>
-                            <span class="step"></span>
-                          </div>
-                          <div class="tab">
-                            <h5>Register User</h5>
+                      </div>
+                      <div class="card-body py-0">
+                        <div class="all-steps" id="all-steps"> <span class="step"></span> <span class="step"></span>
+                          <span class="step"></span>
+                        </div>
+                        <div class="tab">
+                          <h5>Register User</h5>
+                          <div class="col-md-auto">
                             <label class="mb-0"> Username</label>
                             <div class="input-group input-group-outline mb-3">
                               <input type="text" placeholder="" class="form-control" oninput="this.className = ''">
                             </div>
+                          </div>
+                          <div class="col-md-auto">
                             <label class="mb-0"> Email</label>
                             <div class="input-group input-group-outline mb-3">
                               <input type="email" placeholder="" class="form-control" oninput="this.className = ''">
                             </div>
+                          </div>
+                          <div class="row">
+                          <div class="col-md-6">
                             <label class="mb-0"> Password</label>
                             <div class="input-group input-group-outline mb-3">
                               <input type="password" placeholder="" class="form-control" oninput="this.className = ''">
                             </div>
+                          </div>
+                          <div class="col-md-6">
                             <label class="mb-0"> Confirm Password</label>
                             <div class="input-group input-group-outline mb-3">
                               <input type="password" placeholder="" class="form-control" oninput="this.className = ''">
                             </div>
                           </div>
-                          <div class="tab">
-                            <h5>User Settings</h5>
-                            <label class="mb-0"> Full Name</label>
-                            <div class="input-group input-group-outline mb-3">
-                              <input type="text" placeholder="" class="form-control" oninput="this.className = ''">
+                        </div>
+                        </div>
+                        <div class="tab">
+                          <h5>User Settings</h5>
+                          <div class="row">
+                            <div class="col-md-6"><label class="mb-0"> Full Name</label>
+                              <div class="input-group input-group-outline mb-3">
+                                <input type="text" placeholder="" class="form-control" oninput="this.className = ''">
+                              </div>
                             </div>
-                            <label class="mb-0"> Kelas/Jurusan</label>
-                            <div class="input-group input-group-outline mb-3">
-                              <input type="email" placeholder="" class="form-control" oninput="this.className = ''">
-                            </div>
-                            <label class="mb-0"> Jenis Kelamin</label>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                id="flexRadioDefault1">
-                              <label class="form-check-label" for="flexRadioDefault1">
-                                Male
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                id="flexRadioDefault2">
-                              <label class="form-check-label" for="flexRadioDefault2">
-                                Female
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                id="flexRadioDefault3" checked>
-                              <label class="form-check-label" for="flexRadioDefault">
-                                Email
-                              </label>
+                            <div class="col-md-6">
+                              <label class="mb-0"> Kelas/Jurusan</label>
+                              <div class="input-group input-group-outline mb-3">
+                                <input type="email" placeholder="" class="form-control" oninput="this.className = ''">
+                              </div>
                             </div>
                           </div>
-                          <div class="tab">
-                            <!-- <h5>Ekstrakulikuler yang diikuti</h5>
+                          <label class="mb-0"> Jenis Kelamin</label>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Male
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Female
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3"
+                              checked>
+                            <label class="form-check-label" for="flexRadioDefault">
+                              Email
+                            </label>
+                          </div>
+                        </div>
+                        <div class="tab">
+                          <!-- <h5>Ekstrakulikuler yang diikuti</h5>
                           <p><input placeholder="Credit Card #" oninput="this.className = ''" name="email"></p>
                           <p>Exp Month
                             <select id="month">
@@ -198,57 +150,62 @@
                               <option value="2024">2024</option>
                             </select>
                           </p> -->
-                            <div class="row">
-                              <h5>Ekstrakulikuler yang diikuti</h5>
-                              <div class="card-body">
-                                <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                                  <label class="form-check-label" for="flexCheckDefault1">
-                                    Humas
-                                  </label>
-                                </div>
-
-                                <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-                                  <label class="form-check-label" for="flexCheckDefault2">
-                                    Humtik
-                                  </label>
-                                </div>
+                          <div class="row">
+                            <h5>Ekstrakulikuler yang diikuti</h5>
+                            <div class="card-body ">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label " for="defaultCheck1">
+                                  ekstra1
+                                </label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                  ekstra2
+                                </label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label " for="defaultCheck1">
+                                  ekstra3
+                                </label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                  ekstra4
+                                </label>
                               </div>
                             </div>
                           </div>
-
-                          <div class="thanks-message text-center" id="text-message"> <img
-                              src="https://i.imgur.com/O18mJ1K.png" width="100" class="mb-4">
-                            <h3>Thanks for your Donation!</h3> <span>Your donation has been entered! We will contact you
-                              shortly!</span>
-                          </div>
-                          <div style="overflow:auto;" id="nextprevious" class="jusrify-items-center">
-                            <div style="float:center;"> <button type="button" id="prevBtn"
-                                class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0"
-                                onclick="nextPrev(-1)">Previous</button> <button type="button" id="nextBtn"
-                                class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0"
-                                onclick="nextPrev(1)">Next</button> </div>
-                          </div>
                         </div>
-                      </form>
-                    </div>
+
+                        <div style="overflow:auto;" id="nextprevious" class="jusrify-items-center">
+                          <div style="float:center;"> <button type="button" id="prevBtn"
+                              class="btn btn-lg bg-gradient-info btn-lg w-100 mt-4 mb-0"
+                              onclick="nextPrev(-1)">Previous</button> <button type="button" id="nextBtn"
+                              class="btn btn-lg bg-gradient-info btn-lg w-100 mt-4 mb-0"
+                              onclick="nextPrev(1)">Next</button> </div>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
-                <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                  <p class="mb-2 text-sm mx-auto">
-                    Already have an account?
-                    <a href="../pages/sign-in.html" class="text-primary text-gradient font-weight-bold">Sign in</a>
-                  </p>
-                </div>
+              </div>
+              <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                <p class="mb-2 text-sm mx-auto text-white">
+                  Already have an account?
+                  <a href="../pages/sign-in.html" class="text-primary text-gradient font-weight-bold">Sign in</a>
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
     </div>
   </main>
+  </div>
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
