@@ -1,0 +1,137 @@
+:root {
+    /* Warna */
+    --primary-color: #002939;
+    --secondary-color: #FFFDD0;
+
+    /* fonts */
+    --main-font: "Open Sans", sans-serif;
+    --heading-font: "Merriweather", serif;
+}
+
+body {
+    font-family: var(--main-font);
+}
+
+.heading {
+    font-family: var(--heading-font);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.subheading {
+    font-weight: 300;
+}
+
+.section-margin {
+    margin-top: 100px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+}
+.navbar-brand {
+    font-family: var(--heading-font);
+    font-weight: 900;
+}
+
+.navbar-brand span {
+    color: var(--secondary-color);
+}
+
+.nav-link {
+    font-family: var(--heading-font);
+}
+
+.nav-link.active {
+    font-weight: 700;
+    color: var(--secondary-color) !important;
+}
+
+.icon-home a{
+    font-size: 1.8rem;
+    color: var(--primary-color)
+}
+
+/* Home */
+.home {
+    background-color: var(--primary-color);
+    height: 650px;
+    padding-top: 10rem;
+}
+.home .heading {
+    color: var(--secondary-color);
+}
+
+.btn-home .btn-download {
+    background-color: var(--secondary-color);
+    font-family: var(--heading-font);
+    font-weight: 700;
+}
+
+.btn-home .btn-learn {
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    font-family: var(--heading-font);
+    font-weight: 700;
+}
+
+/* Service */
+.card-service {
+    background-color: var(--primary-color);
+    color: white;
+    width: auto;
+    height: 250px;
+}
+
+.detail .heading {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.banner1 {
+    height: 350px;
+}
+
+.banner1 .container {
+    background-color: var(--primary-color);
+}
+
+.banner1 .heading {
+    padding-bottom: 20px;
+}
+
+.banner1 .label {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .home {
+        padding-top: 14rem;
+    }
+    .home .heading {
+        font-size: 36px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .home .container .home .row {
+        height: 100%;
+    }
+    .home .content-left{
+        padding-bottom: 40px;
+    }
+    .home .heading {
+        font-size: 46px;
+    }
+    .home .subheading {
+        font-size: 20px;
+    }
+    .home img {
+        right: 0;
+        bottom: -10%;
+    }
+    .home img2 {
+        right: 0;
+    }
+}
