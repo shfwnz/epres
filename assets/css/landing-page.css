@@ -133,6 +133,54 @@ body {
     object-fit: cover;
 }
 
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    border-radius: 50px 50px 0px 0px;
+    -webkit-border-radius: 50px 50px 0px 0px;
+    -moz-border-radius: 50px 50px 0px 0px;
+    -ms-border-radius: 50px 50px 0px 0px;
+    -o-border-radius: 50px 50px 0px 0px;
+    margin-top: 100px !important;
+}
+
+.footer .footer-logo {
+    color: white;
+    font-family: var(--heading-font);
+    font-weight: 900;
+}
+
+.footer .footer-logo span {
+    color: var(--secondary-color);
+}
+
+.col1 a {
+    color: white;
+    text-decoration: none;
+}
+
+.icon-footer i {
+    font-size: 2rem;
+    color: var(--secondary-color);   
+}
+
+.col2 h5, .col3 h5, .col4 h5, .col5 h5 {
+    color: white;
+    margin-bottom: 20px;
+    font-family: var(--heading-font);
+    font-weight: 500;
+}
+
+.col2 ul li, .col3 ul li, .col4 ul li {
+    list-style: none;
+}
+
+.col2 a, .col3 a, .col4 a {
+    color: white;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
 @media screen and (min-width: 768px) {
     .home {
         padding-top: 14rem;
