@@ -136,11 +136,11 @@ body {
 /* Footer */
 .footer {
     background-color: var(--primary-color);
-    border-radius: 50px 50px 0px 0px;
-    -webkit-border-radius: 50px 50px 0px 0px;
-    -moz-border-radius: 50px 50px 0px 0px;
-    -ms-border-radius: 50px 50px 0px 0px;
-    -o-border-radius: 50px 50px 0px 0px;
+    border-radius: 25px 25px 0px 0px;
+    -webkit-border-radius: 25px 25px 0px 0px;
+    -moz-border-radius: 25px 25px 0px 0px;
+    -ms-border-radius: 25px 25px 0px 0px;
+    -o-border-radius: 25px 25px 0px 0px;
     margin-top: 100px !important;
 }
 

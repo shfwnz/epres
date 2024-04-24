@@ -14,5 +14,16 @@ var swiper = new Swiper(".slider", {
     autoplay: {
         delay: 1500,
         disableOnInteraction: false,
-      },
+    },
 });
+
+// Active Nav
+$(document).ready(function () {
+    $('.nav-link').click(function () {
+        $('.nav-link').removeClass('active');
+        $(this).addClass('active');
+    });
+});
+
+// AOS
+AOS.init();
