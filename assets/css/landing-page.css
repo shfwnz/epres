@@ -133,6 +133,11 @@ body {
     object-fit: cover;
 }
 
+/* Contact */
+form .btn{
+    background-color: yellowgreen;
+}
+
 /* Footer */
 .footer {
     background-color: var(--primary-color);

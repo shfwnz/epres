@@ -17,13 +17,16 @@ var swiper = new Swiper(".slider", {
     },
 });
 
+console.log("ada")
 // Active Nav
 $(document).ready(function () {
     $('.nav-link').click(function () {
-        $('.nav-link').removeClass('active');
-        $(this).addClass('active');
-    });
-});
+        console.log("Ada");
+        $('.nav-link').removeClass('active')
+        $(this).addClass('active')
+    })
+})
+
 
 // AOS
 AOS.init();
