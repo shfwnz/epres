@@ -28,11 +28,11 @@ input.invalid {
 }
 
 .card {
-  height: 600px;
+  height: auto;
 }
 
 .card2 {
-  height: 200px;
+  height: auto;
 }
 
 .tab {
@@ -165,4 +165,22 @@ button:hover {
   height: 8px;
   border-radius: 50%;
   background: white;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    height: auto;
+  }
+  .card2 {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card {
+    height: 600px;
+  }
+  .card2 {
+    height: 200px;
+  }
 }

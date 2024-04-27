@@ -1,5 +1,5 @@
 //your javascript goes here
-var currentTab = 2;
+var currentTab = 0;
 document.addEventListener("DOMContentLoaded", function(event) {
     
 
