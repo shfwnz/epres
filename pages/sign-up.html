@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body class="bg-gray-200">
+<body class="">
   <main class="main-content mt-0 p-0">
     <div class="page-header min-vh-100" style="background-image: url('../assets/img/bg-login.jpg');">
       <div class="container my-auto">
@@ -49,9 +49,9 @@
                 <div class="d-flex justify-content-center align-items-center">
                   <div class="row">
                     <form id="regForm">
-                      <div class="card-header p-0 position-relative mt-n5 mx-3 z-index-2">
-                        <div class="bg-gradient-info shadow-primary border-radius-lg py-3 pe-0 ">
-                          <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Sign Up</h4>
+                      <div class="card-header p-0 position-relative mt-n5 mx-0 z-index-2">
+                        <div class="bg-gradient-info shadow-primary border-radius-lg py-2 pe-0 ">
+                          <h4 class="text-white font-weight-bolder text-center mt-1 mb-1">Sign Up</h4>
                         </div>
                       </div>
                       <div class="card-body py-0">
@@ -60,45 +60,47 @@
                         </div>
                         <div class="tab">
                           <h5>Register User</h5>
-                          <div class="col-md-auto">
+                          <div class="col-lg-12">
                             <label class="mb-0"> Username</label>
                             <div class="input-group input-group-outline mb-3">
-                              <input type="text" placeholder="" class="form-control" oninput="this.className = ''">
+                              <input type="text" placeholder="" class="form-control" oninput="ClearClassName()">
                             </div>
                           </div>
                           <div class="col-md-auto">
                             <label class="mb-0"> Email</label>
                             <div class="input-group input-group-outline mb-3">
-                              <input type="email" placeholder="" class="form-control" oninput="this.className = ''">
+                              <input type="email" placeholder="" class="form-control" oninput="ClearClassName()">
                             </div>
                           </div>
                           <div class="row">
-                          <div class="col-md-6">
-                            <label class="mb-0"> Password</label>
-                            <div class="input-group input-group-outline mb-3">
-                              <input type="password" placeholder="" class="form-control" oninput="this.className = ''">
+                            <div class="col-md-6">
+                              <label class="mb-0"> Password</label>
+                              <div class="input-group input-group-outline mb-3">
+                                <input type="password" placeholder="" class="form-control"
+                                  oninput="this.ClearClassName()">
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <label class="mb-0"> Confirm Password</label>
+                              <div class="input-group input-group-outline mb-3">
+                                <input type="password" placeholder="" class="form-control"
+                                  oninput="this.ClearClassName()">
+                              </div>
                             </div>
                           </div>
-                          <div class="col-md-6">
-                            <label class="mb-0"> Confirm Password</label>
-                            <div class="input-group input-group-outline mb-3">
-                              <input type="password" placeholder="" class="form-control" oninput="this.className = ''">
-                            </div>
-                          </div>
-                        </div>
                         </div>
                         <div class="tab">
                           <h5>User Settings</h5>
                           <div class="row">
                             <div class="col-md-6"><label class="mb-0"> Full Name</label>
                               <div class="input-group input-group-outline mb-3">
-                                <input type="text" placeholder="" class="form-control" oninput="this.className = ''">
+                                <input type="text" placeholder="" class="form-control" oninput="ClearClassName()">
                               </div>
                             </div>
                             <div class="col-md-6">
                               <label class="mb-0"> Kelas/Jurusan</label>
                               <div class="input-group input-group-outline mb-3">
-                                <input type="email" placeholder="" class="form-control" oninput="this.className = ''">
+                                <input type="email" placeholder="" class="form-control" oninput="ClearClassName()">
                               </div>
                             </div>
                           </div>
@@ -115,67 +117,36 @@
                               Female
                             </label>
                           </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3"
-                              checked>
-                            <label class="form-check-label" for="flexRadioDefault">
-                              Email
-                            </label>
-                          </div>
                         </div>
                         <div class="tab">
-                          <!-- <h5>Ekstrakulikuler yang diikuti</h5>
-                          <p><input placeholder="Credit Card #" oninput="this.className = ''" name="email"></p>
-                          <p>Exp Month
-                            <select id="month">
-                              <option value="1">January</option>
-                              <option value="2">February</option>
-                              <option value="3">March</option>
-                              <option value="4">April</option>
-                              <option value="5">May</option>
-                              <option value="6">June</option>
-                              <option value="7">July</option>
-                              <option value="8">August</option>
-                              <option value="9">September</option>
-                              <option value="10">October</option>
-                              <option value="11">November</option>
-                              <option value="12">December</option>
-                            </select>
-                          </p>
-                          <p>Exp Year
-                            <select id="year">
-                              <option value="2021">2021</option>
-                              <option value="2022">2022</option>
-                              <option value="2023">2023</option>
-                              <option value="2024">2024</option>
-                            </select>
-                          </p> -->
                           <div class="row">
                             <h5>Ekstrakulikuler yang diikuti</h5>
-                            <div class="card-body ">
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label " for="defaultCheck1">
-                                  ekstra1
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  ekstra2
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label " for="defaultCheck1">
-                                  ekstra3
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  ekstra4
-                                </label>
+                            <div class="col card2">
+                              <div class="card-body">
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                  <label class="form-check-label " for="defaultCheck1">
+                                    ekstra1
+                                  </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                  <label class="form-check-label" for="defaultCheck1">
+                                    ekstra2
+                                  </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                  <label class="form-check-label " for="defaultCheck1">
+                                    ekstra3
+                                  </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                  <label class="form-check-label " for="defaultCheck1">
+                                    ekstra4
+                                  </label>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -193,7 +164,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card-footer text-center pt-0 px-lg-2 px-1">
+              <div class="card-footer text-center py-2 px-lg-2 px-1">
                 <p class="mb-2 text-sm mx-auto text-white">
                   Already have an account?
                   <a href="../pages/sign-in.html" class="text-primary text-gradient font-weight-bold">Login</a>

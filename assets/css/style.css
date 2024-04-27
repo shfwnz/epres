@@ -27,6 +27,14 @@ input.invalid {
   background-color: #ffdddd
 }
 
+.card {
+  height: 600px;
+}
+
+.card2 {
+  height: 200px;
+}
+
 .tab {
   display: none
 }

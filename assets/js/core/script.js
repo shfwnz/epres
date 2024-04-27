@@ -1,5 +1,5 @@
 //your javascript goes here
-var currentTab = 0;
+var currentTab = 2;
 document.addEventListener("DOMContentLoaded", function(event) {
     
 
@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function showTab(n) {
-    
     var x = document.getElementsByClassName("tab");
     x[n].style.display = "block";
     if (n == 0) {
@@ -64,4 +63,8 @@ function fixStepIndicator(n) {
     var i, x = document.getElementsByClassName("step");
     for (i = 0; i < x.length; i++) { x[i].className = x[i].className.replace(" active", ""); }
     x[n].className += " active";
+}
+
+function ClearClassName() {
+    this.className = '';
 }
