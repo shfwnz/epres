@@ -178,9 +178,9 @@ button:hover {
 
 @media screen and (min-width: 992px) {
   .card {
-    height: 600px;
+    height: auto;
   }
   .card2 {
-    height: 200px;
+    height: auto;
   }
 }
