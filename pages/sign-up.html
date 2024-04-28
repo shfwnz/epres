@@ -63,28 +63,26 @@
                           <div class="col-md-auto">
                             <label class="mb-0"> Username</label>
                             <div class="input-group input-group-outline mb-3">
-                              <input type="text" placeholder="" class="form-control" oninput="ClearClassName()">
+                              <input type="text" placeholder="" class="form-control" oninput="this.className =''">
                             </div>
                           </div>
                           <div class="col-md-auto">
                             <label class="mb-0"> Email</label>
                             <div class="input-group input-group-outline mb-3">
-                              <input type="email" placeholder="" class="form-control" oninput="ClearClassName()">
+                              <input type="email" placeholder="" class="form-control" oninput="this.className =''">
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-md-6">
                               <label class="mb-0"> Password</label>
                               <div class="input-group input-group-outline mb-3">
-                                <input type="password" placeholder="" class="form-control"
-                                  oninput="this.ClearClassName()">
+                                <input type="password" placeholder="" class="form-control" oninput="this.className =''">
                               </div>
                             </div>
                             <div class="col-md-6">
                               <label class="mb-0"> Confirm Password</label>
                               <div class="input-group input-group-outline mb-3">
-                                <input type="password" placeholder="" class="form-control"
-                                  oninput="this.ClearClassName()">
+                                <input type="password" placeholder="" class="form-control" oninput="this.className =''">
                               </div>
                             </div>
                           </div>
@@ -94,13 +92,13 @@
                           <div class="row">
                             <div class="col-md-6"><label class="mb-0"> Full Name</label>
                               <div class="input-group input-group-outline mb-3">
-                                <input type="text" placeholder="" class="form-control" oninput="ClearClassName()">
+                                <input type="text" placeholder="" class="form-control" oninput="this.className =''">
                               </div>
                             </div>
                             <div class="col-md-6">
                               <label class="mb-0"> Kelas/Jurusan</label>
                               <div class="input-group input-group-outline mb-3">
-                                <input type="email" placeholder="" class="form-control" oninput="ClearClassName()">
+                                <input type="email" placeholder="" class="form-control" oninput="this.className =''">
                               </div>
                             </div>
                           </div>
@@ -151,6 +149,7 @@
                             </div>
                           </div>
                         </div>
+
                         <div style="overflow:auto;" id="nextprevious" class="jusrify-items-center">
                           <div style="float:center;"> <button type="button" id="prevBtn"
                               class="btn btn-lg bg-gradient-info btn-lg w-100 mt-4 mb-0"
