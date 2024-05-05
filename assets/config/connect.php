@@ -3,13 +3,11 @@
 $username = "root";
 $password = "";
 $host = "localhost";
-$database = "epres";
-//$port = "3306";
 
-$is_connect = mysqli_connect($host, $username, $password, $database);
+$is_connect = mysqli_connect($host, $username, $password);
 
 if($is_connect){
-    mysqli_select_db($is_connect, $database);
-} else {
-    echo "air!";
+    mysqli_select_db($is_connect, "epres");
+}else{
+    echo 'gagl';
 }
