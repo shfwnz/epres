@@ -193,31 +193,25 @@
         </div>
         <div class="col-lg-6 mt-4">
           <form id="contactForm">
-
-            <!-- Name input -->
             <div class="mb-3">
               <label class="form-label" for="name">Name</label>
-              <input class="form-control" id="name" type="text" placeholder="Name" />
+              <input class="form-control" id="name" name="name" type="text" placeholder="Name" required />
             </div>
-
-            <!-- Email address input -->
+          
             <div class="mb-3">
               <label class="form-label" for="emailAddress">Email Address</label>
-              <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" />
+              <input class="form-control" id="emailAddress" name="email" type="email" placeholder="Email Address" required />
             </div>
-
-            <!-- Message input -->
+          
             <div class="mb-3">
               <label class="form-label" for="message">Message</label>
-              <textarea class="form-control" id="message" type="text" placeholder="Message"
+              <textarea class="form-control" id="message" name="message" type="text" placeholder="Message" required
                 style="height: 10rem;"></textarea>
             </div>
-
-            <!-- Form submit button -->
+          
             <div class="d-grid">
               <button class="btn btn-lg" type="submit">Submit</button>
             </div>
-
           </form>
         </div>
       </div>
@@ -291,6 +285,35 @@
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./assets/js/core/landing-page.js"></script>
+
+  <!-- notif keren -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- emailjs -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("KgzJWjZpzUzCHLPHk"); // Ganti dengan User ID Anda dari EmailJS
+  })();
+</script>
+<script type="text/javascript">
+  window.onload = function() {
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      emailjs.sendForm('service_ty2dc6c', 'template_rcsux99', this)
+        .then(function() {
+          Swal.fire({
+            title: "Pesan berhasil terkirim!",
+            icon: "success"
+          });
+        }, function(error) {
+          Swal.fire({
+            title: "Pesan gagal terkirim!",
+            icon: "error"
+          });
+        });
+    });
+  }
+</script>
 </body>
 
 </html>
