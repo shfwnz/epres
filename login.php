@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-  <title>
-    ePRESS
-  </title>
-  <!--     Fonts and icons     -->
+  <title>ePRESS</title>
+  <!-- Fonts and icons -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
   <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
@@ -20,73 +18,118 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
+
+  <style>
+    /* Add your custom styles here */
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .full-height {
+      min-height: 100vh;
+    }
+
+    .bg-color {
+      background-color: hsl(0, 0%, 96%);
+      height: 100%;
+    }
+
+    /* Adjustments for mobile */
+    @media (max-width: 992px) {
+      .content {
+        padding: 20px;
+        /* Add padding for better spacing */
+      }
+
+      .col-lg-6 {
+        flex: 0 0 100%;
+        /* Set column width to full width on mobile */
+      }
+
+      .form-container {
+        display: block;
+      }
+    }
+  </style>
 </head>
 
-<body class="bg-gray-200">
-  <main class="main-content  mt-0">
-    <div class="page-header align-items-start min-vh-100" style="background-image: url('./assets/img/bg-login.jpg');">
-      <span class="mask bg-gradient-dark opacity-6"></span>
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-4 col-md-8 col-12 mx-auto">
-            <div class="card z-index-0 fadeIn3 fadeInBottom">
-              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                <div class="bg-gradient-info shadow-primary border-radius-lg py-3 pe-1">
-                  <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Sign in</h4>
-                  <div class="row mt-3">
-                    <div class="col-2 text-center ms-auto">
-                      <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-facebook text-white text-lg"></i>
-                      </a>
-                    </div>
-                    <div class="col-2 text-center px-1">
-                      <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-github text-white text-lg"></i>
-                      </a>
-                    </div>
-                    <div class="col-2 text-center me-auto">
-                      <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-google text-white text-lg"></i>
-                      </a>
+<body>
+  <div class="content full-height">
+    <section class="vh-100">
+      <div class="d-flex align-items-center px-4 py-5 px-md-5 text-center text-lg-start bg-color">
+        <div class="container">
+          <div class="row gx-lg-5 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0 d-none d-lg-block">
+              <h1 class="my-5 display-3 fw-bold ls-tight">
+                ePRESS <br />
+                <span class="text-primary">Kemudahan</span>
+              </h1>
+              <p class="" style="color: hsl(217, 10%, 50.8%)">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                quibusdam tempora at cupiditate quis eum maiores libero
+                veritatis? Dicta facilis sint aliquid ipsum atque?
+              </p>
+            </div>
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <div class="card">
+                <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                  <div class="bg-gradient-info shadow-primary border-radius-lg py-3 pe-1">
+                    <h4 class="d-flex justify-content-center text-white font-weight-bolder text-center mt-2 mb-0">Sign in</h4>
+                    <div class="row col d-flex justify-content-center align-items-center mt-2 d-md-none d-lg-flex">
+                      <div class="col-4 col-md-2 text-center">
+                        <a class="btn btn-link px-0" href="javascript:;">
+                          <i class="fa fa-facebook text-white text-lg"></i>
+                        </a>
+                      </div>
+                      <div class="col-4 col-md-2 text-center">
+                        <a class="btn btn-link px-0" href="javascript:;">
+                          <i class="fa fa-github text-white text-lg"></i>
+                        </a>
+                      </div>
+                      <div class="col-4 col-md-2 text-center">
+                        <a class="btn btn-link px-0" href="javascript:;">
+                          <i class="fa fa-google text-white text-lg"></i>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="card-body">
-              <form role="form" class="text-start" method="POST" action="assets/config/proses-login.php">
-                <div class="input-group input-group-outline my-3">
-                  <label class="form-label">Username</label>
-                  <input type="text" name="username" class="form-control"> <!-- Ubah type menjadi email jika perlu, dan pastikan name adalah 'username' -->
+                <div class="card-body py-5 px-md-5">
+                  <form role="form" class="text-start" method="POST" action="assets/config/proses-login.php">
+                    <div class="input-group input-group-outline my-3">
+                      <label class="form-label">Username</label>
+                      <input type="text" name="username" class="form-control">
+                    </div>
+                    <div class="input-group input-group-outline mb-3">
+                      <label class="form-label">Password</label>
+                      <input type="password" name="password" class="form-control">
+                    </div>
+                    <div class="form-check form-switch d-flex align-items-center mb-3">
+                      <input class="form-check-input" type="checkbox" id="rememberMe">
+                      <label class="form-check-label mb-0 ms-2" for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn bg-gradient-info w-100 my-4 mb-2">Login</button>
+                    </div>
+                    <p class="mt-4 text-sm text-center">
+                      Don't have an account?
+                      <a href="../pages/sign-up.html" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                    </p>
+                  </form>
                 </div>
-                <div class="input-group input-group-outline mb-3">
-                  <label class="form-label">Password</label>
-                  <input type="password" name="password" class="form-control"> <!-- Pastikan name adalah 'password' -->
-                </div>
-                <div class="form-check form-switch d-flex align-items-center mb-3">
-                  <input class="form-check-input" type="checkbox" id="rememberMe">
-                  <label class="form-check-label mb-0 ms-2" for="rememberMe">Remember me</label>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn bg-gradient-info w-100 my-4 mb-2">Login</button> <!-- Ubah <a> menjadi <button> untuk submit form -->
-                </div>
-                <p class="mt-4 text-sm text-center">
-                  Don't have an account?
-                  <a href="../pages/sign-up.html" class="text-primary text-gradient font-weight-bold">Sign up</a>
-                </p>
-              </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <footer class="footer position-absolute bottom-2 py-2 w-100">
-        <div class="container">
-          
-        </div>
-      </footer>
-    </div>
-  </main>
-  <!--   Core JS Files   -->
+    </section>
+  </div>
+
+  <!-- Core JS Files -->
   <script src="./assets/js/core/popper.min.js"></script>
   <script src="./assets/js/core/bootstrap.min.js"></script>
   <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
