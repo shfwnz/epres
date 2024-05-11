@@ -57,9 +57,9 @@
 </head>
 
 <body>
-  <div class="content full-height">
+  <div class="full-height">
     <section class="vh-100">
-      <div class="d-flex align-items-center px-4 py-5 px-md-5 text-center text-lg-start bg-color">
+      <div class="d-flex align-items-center px-md-5 text-center text-lg-start bg-color">
         <div class="container">
           <div class="row gx-lg-5 align-items-center">
             <div class="col-lg-6 mb-5 mb-lg-0 d-none d-lg-block">
@@ -74,12 +74,12 @@
                 veritatis? Dicta facilis sint aliquid ipsum atque?
               </p>
             </div>
-            <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="col-lg-6 mb-5 mb-lg-0 ">
               <div class="card">
-                <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="card-header p-0 position-relative mt-n4 mx-4 z-index-1">
                   <div class="bg-gradient-info shadow-primary border-radius-lg py-3 pe-1">
-                    <h4 class="d-flex justify-content-center text-white font-weight-bolder text-center mt-2 mb-0">Sign in</h4>
-                    <div class="row col d-flex justify-content-center align-items-center mt-2 d-md-none d-lg-flex">
+                    <h4 class="d-flex justify-content-center text-white font-weight-bolder text-center mt-0 mb-0">Sign in</h4>
+                    <!-- <div class="row col d-flex justify-content-center align-items-center mt-2 d-md-none d-lg-flex">
                       <div class="col-4 col-md-2 text-center">
                         <a class="btn btn-link px-0" href="javascript:;">
                           <i class="fa fa-facebook text-white text-lg"></i>
@@ -95,7 +95,7 @@
                           <i class="fa fa-google text-white text-lg"></i>
                         </a>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="card-body py-5 px-md-5">
