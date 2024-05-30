@@ -14,11 +14,21 @@
           session_start();
           $_SESSION['id'] = $data['id'];
           $_SESSION['username'] = $username;
-          $_SESSION['name'] = $data['nama'];
+          $_SESSION['fullname'] = $data['fullname'];
+          $_SESSION['email'] = $data['email'];
+          $_SESSION['kelas'] = $data['kelas'];
+          $_SESSION['ekstraa'] = $data['ekstraa'];
+          $_SESSION['gender'] = $data['gender'];
+          $_SESSION['nis'] = $data['nis'];
+          $_SESSION['user_tipe'] = $data['user_tipe'];
 
-          header('Location: ../../dashboard.php');
+          if ($data['user_tipe'] == 'admin') {
+            echo json_encode(array('success' => true, 'redirectUrl' => 'dashboard.php'));
+        } else {
+            echo json_encode(array('success' => true, 'redirectUrl' => 'pages/dashboard-siswa.php'));
+        }
 
-      } else {
-          echo 'login gagal'; // Or a more informative message
+      } else { 
+        echo json_encode(array('success' => false, 'message' => 'Username/Password salah!'));
       }
 ?>

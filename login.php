@@ -5,8 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-  <title>ePRESS</title>
+  <link rel="icon" type="image/png" href="./assets/img/logos/logo-1.png">
+  <title>PRESS</title>
   <!-- Fonts and icons -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
@@ -53,6 +53,7 @@
         display: block;
       }
     }
+  
   </style>
 </head>
 
@@ -62,44 +63,21 @@
       <div class="d-flex align-items-center px-md-5 text-center text-lg-start bg-color">
         <div class="container">
           <div class="row gx-lg-5 align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0 d-none d-lg-block">
-              <h1 class="my-5 display-3 fw-bold ls-tight">
-                ePRESS <br />
-                <span class="text-primary">Kemudahan</span>
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <h1 class="my-5 display-3 fw-bold ls-tight d-flex align-items-center px-4">
+                <img src="./assets/img/logos/logo-1.png" class="navbar-brand-img" alt="main_logo" style="width: 100px; height: 100px;">
+                <span class="ms-3 font-weight-bold text-blue">PRESS</span>
               </h1>
-              <p class="" style="color: hsl(217, 10%, 50.8%)">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Eveniet, itaque accusantium odio, soluta, corrupti aliquam
-                quibusdam tempora at cupiditate quis eum maiores libero
-                veritatis? Dicta facilis sint aliquid ipsum atque?
-              </p>
             </div>
             <div class="col-lg-6 mb-5 mb-lg-0 ">
               <div class="card">
                 <div class="card-header p-0 position-relative mt-n4 mx-4 z-index-1">
                   <div class="bg-gradient-info shadow-primary border-radius-lg py-3 pe-1">
                     <h4 class="d-flex justify-content-center text-white font-weight-bolder text-center mt-0 mb-0">Sign in</h4>
-                    <!-- <div class="row col d-flex justify-content-center align-items-center mt-2 d-md-none d-lg-flex">
-                      <div class="col-4 col-md-2 text-center">
-                        <a class="btn btn-link px-0" href="javascript:;">
-                          <i class="fa fa-facebook text-white text-lg"></i>
-                        </a>
-                      </div>
-                      <div class="col-4 col-md-2 text-center">
-                        <a class="btn btn-link px-0" href="javascript:;">
-                          <i class="fa fa-github text-white text-lg"></i>
-                        </a>
-                      </div>
-                      <div class="col-4 col-md-2 text-center">
-                        <a class="btn btn-link px-0" href="javascript:;">
-                          <i class="fa fa-google text-white text-lg"></i>
-                        </a>
-                      </div>
-                    </div> -->
                   </div>
                 </div>
-                <div class="card-body py-5 px-md-5">
-                  <form role="form" class="text-start" method="POST" action="assets/config/proses-login.php">
+                <div class="card-body pt-5  px-md-5">
+                  <form id="loginForm" role="form" class="text-start" method="POST" action="assets/config/proses-login.php">
                     <div class="input-group input-group-outline my-3">
                       <label class="form-label">Username</label>
                       <input type="text" name="username" class="form-control">
@@ -115,9 +93,9 @@
                     <div class="text-center">
                       <button type="submit" class="btn bg-gradient-info w-100 my-4 mb-2">Login</button>
                     </div>
-                    <p class="mt-4 text-sm text-center">
+                    <p class="mt-3 text-sm text-center">
                       Don't have an account?
-                      <a href="../pages/sign-up.html" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                      <a href="../epres/register.php" class="text-primary text-gradient font-weight-bold">Sign up</a>
                     </p>
                   </form>
                 </div>
@@ -129,6 +107,8 @@
     </section>
   </div>
 
+  <!-- Di dalam <head> pada login.php -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- Core JS Files -->
   <script src="./assets/js/core/popper.min.js"></script>
   <script src="./assets/js/core/bootstrap.min.js"></script>
@@ -142,6 +122,28 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var formData = new FormData(this);
+    fetch('assets/config/proses-login.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = data.redirectUrl; // Redirect berdasarkan tipe user
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: data.message, // Pesan 'Login gagal'
+            });
+        }
+    })
+    .catch(error => console.error('Error:', error));
+});
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

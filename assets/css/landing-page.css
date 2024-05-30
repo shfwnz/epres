@@ -74,7 +74,7 @@ body {
     color: var(--secondary-color);
     font-family: var(--heading-font);
     font-weight: 700;
-}
+}  
 
 /* Service */
 .card-service {

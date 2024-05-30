@@ -1,26 +1,34 @@
 <?php
-include '../config/connect.php';
+session_start();
+include 'connect.php';
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 $username = $_POST['username'];
-$password = $_POST['password'];
-$nama = $_POST['nama'];
-$kelas = $_POST['kelas'];
+$email = $_POST['email'];
+$password = $_POST['password']; // Pastikan melakukan hashing password sebelum menyimpan ke database
+$fullname = $_POST['fullname'];
 $nis = $_POST['nis'];
+$kelas = $_POST['kelas'];
+$gender = $_POST['gender'];
+$ekstraa = $_POST['ekstraa'];
+$user_tipe = 'siswa'; // Nilai langsung untuk user_tipe
 
-$query_check_username = "SELECT * FROM user WHERE username='$username'";
-$result_check_username = mysqli_query($is_connect, $query_check_username);
+// SQL query untuk menyimpan data
+$query = "INSERT INTO user (username, email, password, fullname, nis, kelas, gender, ekstraa, user_tipe) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-if (mysqli_num_rows($result_check_username) > 0) {
-    echo "<script>alert('Username sudah terdaftar! Silakan gunakan username lain.'); window.location.href='../../../pages/';</script>";
-    exit();
-}
+// Siapkan prepared statement untuk keamanan
+$stmt = $is_connect->prepare($query);
+$stmt->bind_param("sssssssss", $username, $email, $password, $fullname, $nis, $kelas, $gender, $ekstraa, $user_tipe);
 
-$query_register = "INSERT INTO user (nama, username, password, nis, kelas) VALUES ('$nama', '$username', '$password', '$nis', '$kelas')";
-$result_register = mysqli_query($is_connect, $query_register);
-
-if ($result_register) {
-    echo "<script>alert('Registrasi berhasil!, Silakan login.'); window.location.href='../../pages/';</script>";    
+// Eksekusi query
+if ($stmt->execute()) {
+    echo json_encode(['success' => true]);
 } else {
-    echo "<script>alert('Registrasi gagal! Silakan coba lagi.'); window.location.href='../../pages/';</script>";
+    echo json_encode(['success' => false, 'error' => $stmt->error]);
 }
+
+// Tutup statement dan koneksi
+$stmt->close();
+$is_connect->close();
 ?>

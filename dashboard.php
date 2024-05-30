@@ -1,9 +1,52 @@
 <?php
+include 'assets/config/connect.php';
 session_start();
 if (!isset($_SESSION['username'])) {
-  header("Location: login.php"); // Ganti 'login.php' dengan URL halaman login Anda
+  header("Location: login.php");
   exit();
 }
+
+if ($_SESSION['user_tipe'] !== 'admin') {
+  header("Location: pages/dashboard-siswa.php");
+  exit();
+}
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Query umum untuk mengambil data berdasarkan hari
+$query = "SELECT h.nama_hari, e.nama_ekstra
+FROM jadwal j
+JOIN hari h ON j.hari_id = h.id
+JOIN ekstra e ON j.ekstra_id = e.id";
+
+// Eksekusi query
+$result = $is_connect->query($query);
+if (!$result) {
+    die("Query failed: " . $is_connect->error);
+}
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        if ($row["nama_hari"] == "senin") {
+            $seninData[] = $row;
+        } elseif ($row["nama_hari"] == "selasa") {
+            $selasaData[] = $row;
+        } elseif ($row["nama_hari"] == "rabu") {
+            $rabuData[] = $row;
+        } elseif ($row["nama_hari"] == "kamis") {
+            $kamisData[] = $row;
+        } elseif ($row["nama_hari"] == "jumat") {
+            $jumatData[] = $row;
+        }
+    }
+} else {
+    echo "No data found";
+}
+
+
+// Tutup koneksi
+$is_connect->close();
 ?>
 
 <!DOCTYPE html>
@@ -13,9 +56,9 @@ if (!isset($_SESSION['username'])) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="./assets/img/logos/logo-1.png">
   <title>
-    ePRESS
+    PRESS
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css"
@@ -38,16 +81,16 @@ if (!isset($_SESSION['username'])) {
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
         aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand m-0" href="../pages/dashboard.html">
-        <img src="./assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold text-white">ePRESS</span>
+      <a class="navbar-brand m-0 pb-0" href="../epres/dashboard.php">
+        <img src="./assets/img/logos/logo-2.png" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">PRESS</span>
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-info" href="../pages/dashboard.html">
+          <a class="nav-link text-white active bg-gradient-info" href="../epres/dashboard.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -55,15 +98,55 @@ if (!isset($_SESSION['username'])) {
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/generate-qr.html">
+          <a class="nav-link text-white" href="../epres/pages/dashboard-ekstra.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">qr_code</i>
+              <i class="material-icons opacity-10">legend_toggle </i>
             </div>
-            <span class="nav-link-text ms-1">Generate QR CODE</span>
+            <span class="nav-link-text ms-1">Monitoring</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/generate-laporan.html">
+          <a class="nav-link text-white " href="../epres/pages/data-absensi-siswa.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">person</i>
+            </div>
+            <span class="nav-link-text ms-1">Absensi Siswa</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="../epres/pages/data-siswa.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">person</i>
+            </div>
+            <span class="nav-link-text ms-1">Data Siswa</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="../epres/pages/tambah-ekstra.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">add</i>
+            </div>
+            <span class="nav-link-text ms-1">Tambah Ekstra</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="../epres/pages/hapus-ekstra.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">delete</i>
+            </div>
+            <span class="nav-link-text ms-1">Hapus Ekstra</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="../epres/pages/atur-presensi.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">rule</i>
+            </div>
+            <span class="nav-link-text ms-1">Atur Presensi</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="../epres/pages/generate-laporan.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">print</i>
             </div>
@@ -71,18 +154,18 @@ if (!isset($_SESSION['username'])) {
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/dashboard-siswa.html">
+          <a class="nav-link text-white " href="../epres/pages/dashboard-siswa.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">photo_camera</i>
+              <i class="material-icons opacity-10">task_alt</i>
             </div>
-            <span class="nav-link-text ms-1">Scan</span>
+            <span class="nav-link-text ms-1">Presensi</span>
           </a>
         </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/profile.html">
+          <a class="nav-link text-white " href="../epres/pages/profile-admin.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">person</i>
             </div>
@@ -90,19 +173,11 @@ if (!isset($_SESSION['username'])) {
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/sign-in.html">
+          <a class="nav-link text-white " href="../login.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">login</i>
             </div>
-            <span class="nav-link-text ms-1"><?php echo htmlspecialchars($_SESSION['name']); ?></span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/sign-up.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">assignment</i>
-            </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
+            <span class="nav-link-text ms-1"><?php echo htmlspecialchars($_SESSION['username']); ?></span>
           </a>
         </li>
       </ul>
@@ -115,20 +190,31 @@ if (!isset($_SESSION['username'])) {
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Epres</a></li>
             <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
           </ol>
         </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 " id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
           </div>
           <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
-                <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none"><?php echo htmlspecialchars($_SESSION['name']); ?></span>
+            <li class="nav-item dropdown pe-0 d-flex align-items-center">
+              <span class="d-inline text-capitalize px-3 d-none d-lg-block" id="current-time"></span>
+              <a href="javascript:;" class="nav-link text-body p-0" id="UserdropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-user me-sm-0"></i>
+                <span class="d-sm-inline d-none"></span>
               </a>
+              <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4" aria-labelledby="UserdropdownMenuButton">
+                <li>
+                  <a class="dropdown-item border-radius-md" href="../epres/assets/config/logout.php">
+                    <i class="fa fa-sign-out me-sm-1"></i>
+                    <span>Logout</span>
+                  </a>
+                </li>
+              </ul>
             </li>
+
+
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
@@ -164,8 +250,8 @@ if (!isset($_SESSION['username'])) {
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
-      <div class="row">
-        <div class="mt-4 mb-5 col-12 grid-margin">
+      <div class="row justify-content-center">
+        <div class="mt-4 mb-5 col-lg-9 grid-margin">
           <div class="card">
             <div class="p-2 pt-2">
               <div class="card-header p-0 position-relative mt-n4 mx-2 z-index-2 bg-transparent">
@@ -179,7 +265,7 @@ if (!isset($_SESSION['username'])) {
               <div class="mx-3 position-relative p-0">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-inner">
-                    <div class="carousel-item active  ">
+                    <div class="carousel-item active">
                       <div class="card bg-light shadow-sm">
                         <div
                           class="card-header bg-light text-dark text-uppercase text-bold d-flex justify-content-center align-items-center"
@@ -187,44 +273,40 @@ if (!isset($_SESSION['username'])) {
                           Senin
                         </div>
                         <ul class="list-group list-group-flush">
+                        <?php if (!empty($seninData)) : ?>
+                          <?php foreach ($seninData as $dataSenin) : ?>
                           <li class="list-group-item">
                             <div class="d-flex justify-content-between align-items-center">
-                              <span class="text-black">Humtik</span>
-                              <a href="../pages/dashboard-ekstra1.html" class="btn btn-sm btn-outline-primary">Masuk</a>
+                              <span><?php echo $dataSenin["nama_ekstra"]; ?></span>
                             </div>
                           </li>
-                          <li class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                              <span class="text-black">Humas</span>
-                              <a href="" class="btn btn-sm btn-outline-primary">Masuk</a>
-                            </div>
-                          </li>
+                          <?php endforeach; ?>
+                        <?php else : ?>
+                          <li class="list-group-item">Tidak ada data</li>
+                        <?php endif; ?>
                         </ul>
                       </div>
                     </div>
                     <div class="carousel-item">
-                      <div class="card bg-light shadow-sm">
-                        <div
-                          class="card-header bg-light text-dark text-uppercase text-bold d-flex justify-content-center align-items-center"
-                          style="font-size: 20px;">
-                          Selasa
-                        </div>
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                              <span class="text-black">Robotik</span>
-                              <a href="#" class="btn btn-sm btn-outline-primary">Masuk</a>
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                              <span class="text-black">Aeromodeling</span>
-                              <a href="#" class="btn btn-sm btn-outline-primary">Masuk</a>
-                            </div>
-                          </li>
-                        </ul>
+                    <div class="card bg-light shadow-sm">
+                      <div class="card-header bg-light text-dark text-uppercase text-bold d-flex justify-content-center align-items-center" style="font-size: 20px;">
+                        Selasa
                       </div>
+                      <ul class="list-group list-group-flush">
+                        <?php if (!empty($selasaData)) : ?>
+                          <?php foreach ($selasaData as $dataSelasa) : ?>
+                            <li class="list-group-item">
+                              <div class="d-flex justify-content-between align-items-center">
+                                <span><?php echo $dataSelasa["nama_ekstra"]; ?></span>
+                              </div>
+                            </li>
+                          <?php endforeach; ?>
+                        <?php else : ?>
+                          <li class="list-group-item">Tidak ada data</li>
+                        <?php endif; ?>
+                      </ul>
                     </div>
+                  </div>
                     <div class="carousel-item">
                       <div class="card bg-light shadow-sm">
                         <div
@@ -233,18 +315,19 @@ if (!isset($_SESSION['username'])) {
                           Rabu
                         </div>
                         <ul class="list-group list-group-flush">
-                          <li class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                              <span class="text-black">Ekstra1</span>
-                              <a href="#" class="btn btn-sm btn-outline-primary">Masuk</a>
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                              <span class="text-black">Ekstra2</span>
-                              <a href="#" class="btn btn-sm btn-outline-primary">Masuk</a>
-                            </div>
-                          </li>
+                        <ul class="list-group list-group-flush">
+                        <?php if (!empty($rabuData)) : ?>
+                          <?php foreach ($rabuData as $dataRabu) : ?>
+                            <li class="list-group-item">
+                              <div class="d-flex justify-content-between align-items-center">
+                                <span><?php echo $dataRabu["nama_ekstra"]; ?></span>
+                              </div>
+                            </li>
+                          <?php endforeach; ?>
+                        <?php else : ?>
+                          <li class="list-group-item">Tidak ada data</li>
+                        <?php endif; ?>
+                      </ul>
                         </ul>
                       </div>
                     </div>
@@ -256,18 +339,19 @@ if (!isset($_SESSION['username'])) {
                           Kamis
                         </div>
                         <ul class="list-group list-group-flush">
-                          <li class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                              <span class="text-black">Ekstra1</span>
-                              <a href="#" class="btn btn-sm btn-outline-primary">Masuk</a>
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                              <span class="text-black">Ekstra2</span>
-                              <a href="#" class="btn btn-sm btn-outline-primary">Masuk</a>
-                            </div>
-                          </li>
+                        <ul class="list-group list-group-flush">
+                        <?php if (!empty($kamisData)) : ?>
+                          <?php foreach ($kamisData as $dataKamis) : ?>
+                            <li class="list-group-item">
+                              <div class="d-flex justify-content-between align-items-center">
+                                <span><?php echo $dataKamis["nama_ekstra"]; ?></span>
+                              </div>
+                            </li>
+                          <?php endforeach; ?>
+                        <?php else : ?>
+                          <li class="list-group-item">Tidak ada data</li>
+                        <?php endif; ?>
+                      </ul>
                         </ul>
                       </div>
                     </div>
@@ -279,24 +363,19 @@ if (!isset($_SESSION['username'])) {
                           Jumat
                         </div>
                         <ul class="list-group list-group-flush">
-                          <li class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                              <span class="text-black">Ekstra1</span>
-                              <a href="#" class="btn btn-sm btn-outline-primary">Masuk</a>
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                              <span class="text-black">Ekstra2</span>
-                              <a href="#" class="btn btn-sm btn-outline-primary">Masuk</a>
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                              <span class="text-black">Ekstra3</span>
-                              <a href="#" class="btn btn-sm btn-outline-primary">Masuk</a>
-                            </div>
-                          </li>
+                        <ul class="list-group list-group-flush">
+                        <?php if (!empty($jumatData)) : ?>
+                          <?php foreach ($jumatData as $dataJumat) : ?>
+                            <li class="list-group-item">
+                              <div class="d-flex justify-content-between align-items-center">
+                                <span><?php echo $dataJumat["nama_ekstra"]; ?></span>
+                              </div>
+                            </li>
+                          <?php endforeach; ?>
+                        <?php else : ?>
+                          <li class="list-group-item">Tidak ada data</li>
+                        <?php endif; ?>
+                      </ul>
                         </ul>
                       </div>
                     </div>
@@ -362,7 +441,7 @@ if (!isset($_SESSION['username'])) {
     <div class="card shadow-lg">
       <div class="card-header pb-0 pt-3">
         <div class="float-start">
-          <h5 class="mt-3 mb-0">ePRESS UI Configurator</h5>
+          <h5 class="mt-3 mb-0">UI Configurator</h5>
           <p>See our dashboard options.</p>
         </div>
         <div class="float-end mt-4">
@@ -381,8 +460,8 @@ if (!isset($_SESSION['username'])) {
         <div class="d-flex">
           <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark"
             onclick="sidebarType(this)">Dark</button>
-          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-transparent"
-            onclick="sidebarType(this)">Transparent</button>
+          <!-- <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-transparent"
+            onclick="sidebarType(this)">Transparent</button> -->
           <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-white"
             onclick="sidebarType(this)">White</button>
         </div>
@@ -393,19 +472,8 @@ if (!isset($_SESSION['username'])) {
             <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
           </div>
         </div>
-        <hr class="horizontal dark my-sm-4">
-        <a class="btn btn-outline-dark w-100" href="https://github.com/OyShan1/epres">View documentation</a>
-        <div class="w-100 text-center">
-          <a class="github-button" href="https://github.com/OyShan1/epres" data-icon="octicon-star" data-size="large"
-            data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-          <h6 class="mt-3">Thank you!</h6>
-          <a href="" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-          </a>
-          <a href="" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-          </a>
-        </div>
+        
+        
       </div>
     </div>
   </div>
@@ -671,6 +739,24 @@ if (!isset($_SESSION['username'])) {
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+    <!-- Script Waktu -->
+  <!-- Di bagian bawah sebelum tag </body> -->
+<script>
+  // Fungsi untuk menampilkan jam saat ini
+  function displayCurrentTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    document.getElementById('current-time').innerText = `${hours}:${minutes}:${seconds}`;
+  }
+
+  // Panggil fungsi untuk menampilkan jam pertama kali
+  displayCurrentTime();
+
+  // Atur agar fungsi displayCurrentTime dipanggil setiap detik
+  setInterval(displayCurrentTime, 1000);
+</script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->

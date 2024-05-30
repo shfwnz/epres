@@ -28,15 +28,69 @@
 
   <!-- Swiper JS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" type="image/png" href="./assets/img/logos/logo-1.png">
+  <title>PRESS</title>
+  <style>
+    .wave-container {
+      background: white;
+      position: relative;
+      overflow: hidden;
+    }
 
-  <title>ePRESS</title>
+    .wave {
+      position: relative;
+      width: 100%;
+      height: 100px;
+      background: #002939; /* Warna dasar background wave */
+    }
+
+    .wave:before, .wave:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 200%;
+      height: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border-radius: 100% 50%;
+    }
+
+    .wave:before {
+      top: 60px; /* Sesuaikan posisi vertikal */
+      animation: waveAnimation 10s infinite linear;
+      opacity: 0.6; /* Sesuaikan transparansi */
+    }
+
+    .wave:after {
+      top: 70px; /* Sesuaikan posisi vertikal */
+      animation: waveAnimation 10s infinite linear reverse;
+      opacity: 0.8; /* Sesuaikan transparansi */
+    }
+
+    @keyframes waveAnimation {
+      0% {
+        transform: translateX(-50%) translateY(0);
+      }
+      50% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+  </style>
+
 </head>
 
 <body data-spy="scroll" data-target="#navbar-spy" data-offset="100">
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
       <div class="container">
-        <a class="navbar-brand" href="#"><span>e</span>PRESS</a>
+        <a class="navbar-brand m-0 pb-0" href="#">
+          <img src="./assets/img/logos/logo-2.png" class="navbar-brand-img h-100" alt="main_logo" style="width: 45px; height:auto;">
+          <span class="ms-1 font-weight-bold text-white">PRESS</span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -49,10 +103,10 @@
             <a class="nav-link me-4" href="#activity">Blog</a>
             <a class="nav-link" href="#contact">Contact Us</a>
           </div>
-          <div class="icons-home mt-3 mt-lg-0">
+          <!-- <div class="icons-home mt-3 mt-lg-0">
             <a href="#"><i class='bx bxs-user'></i></a>
             <a href="#"><i class='bx bx-mail-send ms-3'></i></a>
-          </div>
+          </div> -->
         </div>
       </div>
     </nav>
@@ -71,7 +125,7 @@
             Aplikasi Presensi Ekstrakulikuler yang digunakan oleh warga Stembayo.
           </p>
           <div class="btn-home mt-5">
-            <a href="https://ilhamaja.sija-bridge.tech/epres/pages/sign-in.html" class="btn btn-download py-2 px-3 px-lg-4 py-lg-3">Masuk Sekarang</a>
+            <a href="https://akbar03.sija-bridge.tech/epres/dashboard.php" class="btn btn-download py-2 px-3 px-lg-4 py-lg-3">Masuk Sekarang</a>
           </div>
         </div>
         <div class="col-lg-6 posiition-relative d-none d-lg-block">
@@ -81,6 +135,10 @@
       </div>
     </div>
   </section>
+
+  <div class="wave-container">
+    <div class="wave">
+  </div>
 
   <!-- Service -->
   <section class="service section-margin" id="service">
@@ -130,18 +188,20 @@
       </div>
     </div>
   </section>
+  <br/>
+  <br/>
 
   <!-- Banner1 -->
-  <section class="banner1 section-margin px-2" id="banner1">
+  <!-- <section class="banner1 section-margin px-2" id="banner1">
     <div class="container rounded-3 pt-4 p-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
       <div class="row text-white">
         <div class="col-lg-12">
-          <h3 class="heading text-center">Menggunakan Teknologi QR CODE</h3>
-          <p class="label">Siswa hanya perlu scan QR Code yang disediakan dari guru tanpa perlu tanda tangan.</p>
+          <h3 class="heading text-center">lorem</h3>
+          <p class="label">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi accusamus odio quis quae impedit reiciendis nulla repellat animi! Quod aut doloribus fuga soluta repellat nesciunt cupiditate suscipit id numquam reiciendis!</p>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Slider -->
   <section class="banner2" id="activity">
@@ -223,10 +283,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-6 col1">
-          <h3 class="footer-logo"><span>e</span>PRESS</h3>
-          <a href="#" class="mt-3 d-inline-block">ilhamaja.sija-bridge.tech</a>
-          <a href="#" class="d-block">+62 888 888 888 88</a>
-          <div class="icon-footer mt-3">
+          <h4 class="footer-logo">
+            <span>
+              <img src="./assets/img/logos/logo-2.png" class="navbar-brand-img h-100" alt="main_logo" style="width: 35px; height:auto;">
+            </span>PRESS
+          </h4>
+          <a href="#" class="d-block"></a>
+          <div class="icon-footer mt-4">
             <a href="#">
               <i class='bx bxl-whatsapp'></i>
               <i class='bx bxl-instagram mx-3'></i>
@@ -246,15 +309,9 @@
             <li><a href="#">About Us</a></li>
           </ul>
         </div>
-        <div class="col-lg-2 col-md-3 col4 mt-4 mt-lg-0">
-          <h5>HelpFull Link</h5>
-          <ul class="ps-0">
-            <li><a href="https://github.com/OyShan1/epres">Github</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-3 col5 mt-4 text-white mt-lg-0">
+        <div class="col-lg-2 col-md-3 col5 mt-4 text-white mt-lg-0 me-100">
           <h5>Address</h5>
-          <p>Jl. Lorem</p>
+          <p>Jl. STM Pembangunan, Santren, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</p>
 
           <a href="#">Google Maps</a>
         </div>

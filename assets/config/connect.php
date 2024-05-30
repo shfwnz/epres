@@ -1,13 +1,8 @@
 <?php
 
-$username = "root";
-$password = "";
 $host = "localhost";
+$user = "baraja";
+$password = "bar123";
+$db = "epres";
 
-$is_connect = mysqli_connect($host, $username, $password);
-
-if($is_connect){
-    mysqli_select_db($is_connect, "epres");
-}else{
-    echo 'gagl';
-}
+$is_connect = mysqli_connect($host,$user,$password,$db);
